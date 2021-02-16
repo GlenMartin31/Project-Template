@@ -10,4 +10,3 @@
 # and then might perform the first stage of the analysis (e.g. imputation, or model fitting etc.) 
 # Create additional R scripts as needed for each stage of the paper
 # Good practice is where each future script "calls" the previous (e.g. using source())
-
