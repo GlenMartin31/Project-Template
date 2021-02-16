@@ -1,0 +1,110 @@
+---
+title: "INSERT TITLE HERE"
+author: Glen P. Martin^1^, PhD; ....
+
+#bibliography: "../Manuscript/REFs.bib" #path to .bib file for this paper
+csl: ../Templates/american-medical-association.csl
+#sets the style of the references: more avaliable here: https://github.com/citation-style-language/styles
+
+output: 
+  bookdown::word_document2:
+    fig_caption: yes
+    reference_docx: "../Templates/markdown_manuscript_template.docx"
+  
+  # bookdown::pdf_document2:
+  #   includes:
+  #     before_body: "../Templates/doc_prefix.tex"
+  #     in_header: "../Templates/preamble.tex"
+  #   keep_tex: yes
+  #   latex_engine: xelatex
+  #   number_sections: yes
+  #   toc: no
+  
+  # github_document:
+  #   toc: false
+
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "rmarkdown_output",
+  output_format = "all") })
+  
+fontsize: 12pt
+linestretch: 1.5
+# link-citations: yes
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+
+# rstudio sets the folder where .Rmd file is located as work directory
+# set it back to the folder where .Rproj is located
+opts_knit$set(root.dir = normalizePath("../")) 
+
+opts_chunk$set(echo = FALSE, fig.width = 6, fig.height = 6,
+               fig.align = 'center', cache = FALSE, warning = FALSE, 
+               message = TRUE)
+options(digits = 3, width = 88)
+```
+
+```{r env_load, include=FALSE}
+#Use this R chunk to call the scripts (this is usually the final script in the "chain" if following the idea of
+#splitting each analytical tasks into steps, where each script "calls" the previous)
+#e.g. source(here::here("Scripts", "02_Analysis.R"))
+
+```
+
+
+1. Division of Informatics, Imaging and Data Science, Faculty of Biology, Medicine and Health, University of Manchester, Manchester Academic Health Science Centre, Manchester, United Kingdom
+
+[Insert Additional Affiliations for co-authors]
+
+\
+__Running Title:__ [Insert Running Title] 
+
+__Funding:__ [Insert Funding Statement] 
+
+__Competing  Interests:__ [Insert CI Statement] 
+
+__Corresponding Author:__ \
+Dr Glen Philip Martin \
+Lecturer in Health Data Science \
+Vaughan House, University of Manchester, Manchester, M13 9GB, United Kingdom \
+Email: glen.martin@manchester.ac.uk
+
+\clearpage
+
+# Abstract
+
+
+## Keywords
+
+
+\clearpage
+
+
+# Background {#Background}
+
+
+# Methods {#Methods}
+
+# Results {#Results}
+
+# Discussion {#Discussion}
+
+
+
+# Tables 
+
+```{r ENTER_TABLE_LABEL}
+#e.g. knitr::kable(table1, caption = 'Insert Table Caption')
+```
+
+
+# Figures
+
+```{r ENTER_FIGURE_LABEL, fig.cap="Insert Figure Caption."}
+# 
+```
+
+
+# References
